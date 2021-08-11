@@ -58,17 +58,75 @@
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers"><code class="language-javascript">
-                        // Call Hello World 
-                        function HelloWorld(){
-                         alert("hello world");
+                    //Controller Function
+                    //Get string data from the page
+                    function getString() {
+                    
+                        document.getElementById("alert").classList.add("invisible");
+                    
+                        let userString = document.getElementById("userString").value; 
+                    
+                        let returnObj = palindrome(userString);
+                    
+                        displayResults(returnObj);
+                    }
+                    
+                    //Logic Function
+                    //Identify if the string is a palindrome
+                    function palindrome(userString){
+                    
+                        let returnObj = {};
+                        //make string lowercase and remove whitespace, special characters
+                        userString = userString.toLowerCase();
+                        let regex = /[^a-z0-9]/gi;
+                        userString = userString.replace(regex,"");
+                    
+                        //reverse the string
+                        let revString = [];
+                        for(let i = userString.length-1; i >= 0; i--){
+                            revString += userString[i];
                         }
+                    
+                        //check if the string is same forward and backward
+                        if(revString == userString) {
+                            returnObj.msg = "Yes!  You entered a palindrome"
+                        } else {
+                            returnObj.msg = "Nope! you did not enter a palindrome"
+                        }
+                    
+                        returnObj.reversed = revString;
+                    
+                        return returnObj;
+                    }
+                    
+                    //Display Function
+                    //Display the output on the screen
+                    function displayResults(returnObj) {
+                        //turn on alert box
+                        document.getElementById("alert").classList.remove("invisible");
+                    
+                        document.getElementById("alertHeader").innerHTML = returnObj.msg;
+                        document.getElementById("msg").innerHTML = `Your phrase reversed is: ${returnObj.reversed} `;
+                    }
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of 'Hello World'</p>
+                <p>The Code is structured in three functions.</p>
+                <h5>Taco Cat</h5>
+                <p>Taco Cat is an application that checks whether a word or phrase is a palindrome</p>
+                <p>The get string function is the controller function for the app. It gets the user input from the screen, 
+                    calls the palindrome function to check if it is a palindrome, and then calls the display function to 
+                    display the output on the screen.
+                </p>
+                <p>The palindrome function is the logic function. It checks if the input value is the same forwards and backwards, once 
+                    capitalization, whitespace, and special characters are removed. The result is stored in a object that holds both an output 
+                    message and the value of the reversed input string.
+                </p>
+                <p>
+                    The display function turns on the 'alert' to indicate that the string has been checked. It also displays the message and 
+                    reversed string that were stored in the output object from the palindrome function. 
+                </p>
             </div>
         </div>
     </div>
