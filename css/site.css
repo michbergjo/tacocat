@@ -1,12 +1,13 @@
 :root{
-    --primary-color: rgba(145, 14, 138, 0.774);
-    --secondary-color: rgb(255, 168, 97);
-    --dark-color: rgba(71, 0, 88, 0.678);
-    --white-color: #e7f7f7;
+    --primary-color: rgb(250, 164, 6);
+    --secondary-color: rgb(255, 44, 44);
+    --dark-color: rgba(138, 9, 0, 0.678);
+    --white-color: #f3e4bc;
 }
 
 body{
     color: var(--dark-color);
+    font-family: 'Staatliches', cursive;
 }
 
 nav{
@@ -19,6 +20,18 @@ footer{
 
 h1,h2,h3,h4,h5,h6{
     color: var(--primary-color);
+}
+
+h1{
+    font-family: 'Special Elite', cursive;
+}
+
+.nameFont{
+    font-family: 'Special Elite', cursive;
+}
+
+h2,h3,h4,h5,h6{
+    font-family: 'Staatliches', cursive;
 }
 
 footer{
@@ -36,11 +49,11 @@ footer .social>a:hover{
 }
 
 .bsicon{
-    color: purple;
+    color: rgb(228, 9, 9);
 }
 
 .jsicon{
-    color: rgb(226,211,4);
+    color: rgb(252, 150, 17);
 }
 
 .html5icon{
@@ -48,7 +61,7 @@ footer .social>a:hover{
 }
 
 .css3icon{
-    color: rgb(11,82,214);
+    color: rgba(243, 189, 39, 0.856);
 }
 
 .checklist >li i{
@@ -66,6 +79,15 @@ main>.container {
     padding: 60px 15px 0;
 }
 
+.btnCustom{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btnCustom:hover{
+    background-color: var(--dark-color);
+    color: white;
+}
 
 .sticky-nav {
     position: fixed;
